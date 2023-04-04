@@ -1,0 +1,157 @@
+1) Observe o trecho de código abaixo:
+
+int INDICE = 13, SOMA = 0, K = 0;
+
+enquanto K < INDICE faça
+
+{
+
+K = K + 1;
+
+SOMA = SOMA + K;
+
+}
+
+imprimir(SOMA);
+
+
+
+Ao final do processamento, qual será o valor da variável SOMA?
+
+R: 91
+
+
+
+2) Dado a sequência de Fibonacci, onde se inicia por 0 e 1 e o próximo valor sempre será a soma dos 2 valores anteriores (exemplo: 0, 1, 1, 2, 3, 5, 8, 13, 21, 34...), escreva um programa na linguagem que desejar onde, informado um número, ele calcule a sequência de Fibonacci e retorne uma mensagem avisando se o número informado pertence ou não a sequência.
+
+
+IMPORTANTE:
+
+Esse número pode ser informado através de qualquer entrada de sua preferência ou pode ser previamente definido no código;
+
+
+R:  
+
+
+# Solicita que o usuário insira um número para verificar
+numero = int(input("Digite um número inteiro para verificar se ele pertence à sequência de Fibonacci: "))
+
+# Inicia as variáveis com os valores iniciais da sequência de Fibonacci
+fibonacci_antecessor = 0
+fibonacci_atual = 1
+
+# Verifica se o número é igual a 0 ou 1
+if numero == 0 or numero == 1:
+    print("O número", numero, "pertence à sequência de Fibonacci.")
+else:
+    # Inicia um loop para calcular os próximos valores da sequência de Fibonacci
+    while fibonacci_atual < numero:
+        # Calcula o próximo valor da sequência
+        fibonacci_proximo = fibonacci_antecessor + fibonacci_atual
+        # Atualiza as variáveis com os valores anteriores
+        fibonacci_antecessor = fibonacci_atual
+        fibonacci_atual = fibonacci_proximo
+    
+    # Verifica se o número pertence à sequência de Fibonacci
+    if fibonacci_atual == numero:
+        print("O número", numero, "pertence à sequência de Fibonacci.")
+    else:
+        print("O número", numero, "não pertence à sequência de Fibonacci.")
+
+
+
+
+
+
+
+3) Descubra a lógica e complete o próximo elemento:
+
+
+
+a) 1, 3, 5, 7, 9
+
+b) 2, 4, 8, 16, 32, 64, 128
+
+c) 0, 1, 4, 9, 16, 25, 36, 49
+
+d) 4, 16, 36, 64, 100
+
+e) 1, 1, 2, 3, 5, 8, 13
+
+f) 2,10, 12, 16, 17, 18, 19, 20
+
+
+
+4 - Dois veículos (um carro e um caminhão) saem respectivamente de cidades opostas pela mesma rodovia. O carro de Ribeirão Preto em direção a Franca, a uma velocidade constante de 110 km/h e o caminhão de Franca em direção a Ribeirão Preto a uma velocidade constante de 80 km/h. Quando eles se cruzarem na rodovia, qual estará mais próximo a cidade de Ribeirão Preto?
+
+R
+
+IMPORTANTE:
+
+a) Considerar a distância de 100km entre a cidade de Ribeirão Preto <-> Franca.
+
+b) Considerar 2 pedágios como obstáculo e que o caminhão leva 5 minutos a mais para passar em cada um deles e o carro possui tag de pedágio (Sem Parar)
+
+c) Explique como chegou no resultado.
+
+
+R:  
+
+O carro se desloca a uma velocidade constante de 110 km/h, enquanto o caminhão se desloca a uma velocidade constante de 80 km/h, levando em conta os pedágios.
+
+Podemos calcular o tempo que cada veículo leva para chegar ao ponto de encontro usando a fórmula:
+
+tempo = distância / velocidade
+
+Vamos chamar de x a distância percorrida pelo carro e de (100 - x) a distância percorrida pelo caminhão, já que eles saíram de cidades opostas.
+
+Então, para o carro:
+
+tempo = x / 110
+
+E para o caminhão:
+
+tempo = (100 - x) / 80 + (5/60) + (5/60)
+
+Note que adicionamos 5 minutos para cada um dos dois pedágios que o caminhão precisa parar, convertendo para horas (5/60) para realizar o cálculo.
+
+Igualando os tempos, temos:
+
+x / 110 = (100 - x) / 80 + (5/60) + (5/60)
+
+Multiplicando ambos os lados da equação por 880 (o mínimo múltiplo comum de 110 e 80) para eliminar os denominadores, obtemos:
+
+8x = 11(100 - x) + 44 + 44
+
+8x = 1100 - 11x + 88
+
+19x = 1188
+
+x = 62.53 km
+
+Portanto, o ponto de encontro dos dois veículos está a uma distância de 62.53 km da cidade de Ribeirão Preto.
+
+Agora, vamos calcular a distância de cada veículo até Ribeirão Preto:
+
+O carro percorreu 62.53 km em um tempo de (62.53 / 110) = 0.568 horas. Portanto, a distância do carro até Ribeirão Preto é de (100 - 62.53) = 37.47 km.
+O caminhão percorreu 100 - 62.53 = 37.47 km em um tempo de (37.47 / 80) + (5/60) + (5/60) = 0.575 horas. Portanto, a distância do caminhão até Ribeirão Preto é de 62.53 km.
+Concluímos, portanto, que quando se encontrarem na rodovia, o carro estará mais próximo de Ribeirão Preto do que o caminhão.
+
+ 
+ 
+ 
+ 
+
+
+5) Escreva um programa que inverta os caracteres de um string.
+
+
+R: Feito em python pelo collab
+
+string = "exemplo de string"
+string_invertida = ""
+
+for i in range(len(string)-1, -1, -1):
+    string_invertida += string[i]
+
+print(string_invertida)
